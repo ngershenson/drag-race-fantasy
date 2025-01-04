@@ -1,8 +1,8 @@
-## Drag Race Fantasy
+# Drag Race Fantasy
 
 Welcome to Drag Race Season 17 Fantasy! This is a React Web App that helps track total points and standings for a single league
 
-# Rules
+# # Rules
 
 - During the week before each episode, each player will draft a team of queens.
   - This number will change from week to week
@@ -20,7 +20,7 @@ Welcome to Drag Race Season 17 Fantasy! This is a React Web App that helps track
   - During the finals, teams will earn points in a different way
 - Each queen will earn or lose points for the team based on the rules in the Points section.
 
-# Points
+# # Points
 - Weekly
   - Winning a mini challenge: +2
   - Winning the episode: +4
