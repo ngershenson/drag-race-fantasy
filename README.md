@@ -42,3 +42,5 @@ Welcome to Drag Race Season 17 Fantasy! This is a React Web App that helps track
   - Tries to keep the peace during a fight: +1
   - Runway reveal: +2 (excluding required reveals from theme)
   - Funny exit line after elimination: +1
+  - Tragic backstory/crying: +1
+  - Named the most when asked who should go home: -2

@@ -1,6 +1,6 @@
 // Represents a single queen
 export interface Queen {
-    id: string; // Unique identifier for the queen
+    id: number; // Unique identifier for the queen
     name: string;
     points: number; // Points earned this week
   }
@@ -14,6 +14,7 @@ export interface Queen {
   // Represents a team
   export interface Team {
     name: string;
+    id: number;
     owner: string;
     totalPoints: number; // Cumulative points for the team
     picks: {
