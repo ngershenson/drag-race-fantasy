@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import LeagueControls from "./components/LeagueControls";
+import QueenAssignmentBoard from "./components/QueenAssignmentBoard";
+import PointsTable from "./components/PointsTable";
 import { LeagueMetadata, Team, Queen } from "./types";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 const App = () => {
@@ -17,7 +20,7 @@ const App = () => {
     },
     {
       id: 2,
-      name: "Fantasy Queens",
+      name: "Ru's Ruse",
       owner: "Noah",
       totalPoints: 0,
       picks: {
@@ -137,30 +140,35 @@ const App = () => {
     });
   };
 
+  const handleAssignQueen = (queenId: number, teamIndex: number) => {
+    assignQueenToTeam(queenId, teamIndex, 1);
+    console.log(`${teams[teamIndex].name} picked ${queens[queenId].name}`);
+  };
+
+
   return (
     <div style={{ margin: "10px" }}>
       <h1>RuPaul's Drag Race Fantasy League</h1>
 
       <div>
         {isSelectionPhase ? (
-          <div>
-            {/* Selection UI goes here */}
-            <h2>Select Queens for the Week</h2>
-            {/* Render queens and team rosters */}
-          </div>
+          <>
+            <QueenAssignmentBoard
+              queens={queens}
+              teams={teams}
+              handleClick={handleAssignQueen}
+            />
+            <button onClick={endSelectionPhase}>Finish Selection</button>
+          </>
         ) : (
           <div>
-            {/* Points form or other UI */}
             <h2>Submit Points for the Week</h2>
+            <PointsTable data={teams} />
           </div>
         )}
       </div>
       <Dashboard teams={teams} />
-      {isSelectionPhase ? (
-        <button onClick={endSelectionPhase}>Finish Selection</button>
-      ) : (
-        <LeagueControls metadata={metadata} setMetadata={setMetadata} />
-      )}
+      {!isSelectionPhase && <LeagueControls metadata={metadata} setMetadata={setMetadata} setIsSelectionPhase={setIsSelectionPhase} />}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Dashboard = ({ teams }: DashboardProps) => {
     return (
         <div>
           <h2>Teams</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div className="team-dashboard">
             {teams.map((team) => (
               <TeamCard key={team.name} team={team} />
             ))}
