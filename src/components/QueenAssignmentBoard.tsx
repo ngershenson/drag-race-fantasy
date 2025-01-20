@@ -21,16 +21,18 @@ const QueenAssignmentBoard = ({
                 <div className="card-body">
                   <h5 className="card-title">{queen.name}</h5>
                   <p className="card-text">She slays this week</p>
-                  {teams.map((team) => {
-                    return (
-                      <button
-                        className="btn btn-sm btn-primary"
-                        onClick={() => handleClick(queen.id - 1, team.id - 1)}
-                      >
-                        {team.name}
-                      </button>
-                    );
-                  })}
+                  <div className="queen-assignment-buttons">
+                    {teams.map((team) => {
+                      return (
+                        <button
+                          className="btn btn-sm btn-outline-secondary"
+                          onClick={() => handleClick(queen.id - 1, team.id - 1)}
+                        >
+                          {team.name}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             );

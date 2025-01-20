@@ -23,7 +23,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -68,10 +67,17 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 10px 5px;
 }
 
 .queen-assignment-card {
   width: 30%;
+}
+
+.queen-assignment-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .team-dashboard {

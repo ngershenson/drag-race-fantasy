@@ -145,10 +145,15 @@ const App = () => {
     console.log(`${teams[teamIndex].name} picked ${queens[queenId].name}`);
   };
 
-
   return (
-    <div style={{ margin: "10px" }}>
-      <h1>RuPaul's Drag Race Fantasy League</h1>
+    <div>
+      <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid">
+          <h1 className="navbar-text">
+            Ru Paul's Drag Race Fantasy
+          </h1>
+        </div>
+      </nav>
 
       <div>
         {isSelectionPhase ? (
@@ -158,7 +163,7 @@ const App = () => {
               teams={teams}
               handleClick={handleAssignQueen}
             />
-            <button onClick={endSelectionPhase}>Finish Selection</button>
+            <button className="btn btn-danger" onClick={endSelectionPhase}>Finish Selection</button>
           </>
         ) : (
           <div>
@@ -168,7 +173,13 @@ const App = () => {
         )}
       </div>
       <Dashboard teams={teams} />
-      {!isSelectionPhase && <LeagueControls metadata={metadata} setMetadata={setMetadata} setIsSelectionPhase={setIsSelectionPhase} />}
+      {!isSelectionPhase && (
+        <LeagueControls
+          metadata={metadata}
+          setMetadata={setMetadata}
+          setIsSelectionPhase={setIsSelectionPhase}
+        />
+      )}
     </div>
   );
 };
