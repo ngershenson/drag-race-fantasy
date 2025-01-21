@@ -12,20 +12,20 @@ const QueenAssignmentBoard = ({
   return (
     <>
       <div className="queen-assignment-board">
-        <h2>Select Your Queens</h2>
+        <h2 className="display-4">Select Your Queens</h2>
 
         <div className="queen-assignment-container">
           {queens.map((queen) => {
             return (
               <div className="card queen-assignment-card">
                 <div className="card-body">
-                  <h5 className="card-title">{queen.name}</h5>
-                  <p className="card-text">She slays this week</p>
+                  <div className="card-title display-6">{queen.name}</div>
+                  {/* <p className="card-text">She slays this week</p> */}
                   <div className="queen-assignment-buttons">
                     {teams.map((team) => {
                       return (
                         <button
-                          className="btn btn-sm btn-outline-secondary"
+                          className="btn btn-sm btn-outline-secondary queen-assignment-button"
                           onClick={() => handleClick(queen.id - 1, team.id - 1)}
                         >
                           {team.name}
@@ -35,9 +35,8 @@ const QueenAssignmentBoard = ({
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
-          ;
         </div>
       </div>
     </>

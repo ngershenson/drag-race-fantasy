@@ -146,16 +146,10 @@ const App = () => {
   };
 
   return (
-    <div>
-      <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-          <h1 className="navbar-text">
-            Ru Paul's Drag Race Fantasy
-          </h1>
-        </div>
-      </nav>
+    <>
+      <h1 className="display-2">Ru Paul's Drag Race Fantasy</h1>
 
-      <div>
+      <div className="queen-selection-phase-container">
         {isSelectionPhase ? (
           <>
             <QueenAssignmentBoard
@@ -163,11 +157,13 @@ const App = () => {
               teams={teams}
               handleClick={handleAssignQueen}
             />
-            <button className="btn btn-danger" onClick={endSelectionPhase}>Finish Selection</button>
+            <button id="assign-queens" className="btn btn-danger" onClick={endSelectionPhase}>
+              Finish Selection
+            </button>
           </>
         ) : (
           <div>
-            <h2>Submit Points for the Week</h2>
+            <h2 className="display-4">Submit Points for the Week</h2>
             <PointsTable data={teams} />
           </div>
         )}
@@ -180,7 +176,7 @@ const App = () => {
           setIsSelectionPhase={setIsSelectionPhase}
         />
       )}
-    </div>
+    </>
   );
 };
 

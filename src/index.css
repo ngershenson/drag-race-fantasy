@@ -1,16 +1,14 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+body {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: lightpink !important;
+}
 
-  color-scheme: light dark;
-  color: rgba(243, 85, 211, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  margin: 10px;
+  background-color: rgb(253, 213, 219) !important;
 }
 
 a {
@@ -22,16 +20,22 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
+h1.display-2 {
+  color: magenta;
   font-size: 3.2em;
   line-height: 1.1;
+  margin-left: 10px;
+}
+
+div > h2 {
+  color: rgba(255, 0, 204, 0.87);
+  text-shadow: rgba(247, 155, 229, 0.87) 0 0 10px;
+
+}
+
+.card.queen-assignment-card {
+  background-color: pink;
+  border-color: rgba(247, 155, 229, 0.87);
 }
 
 button {
@@ -46,11 +50,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: rgba(255, 0, 204, 0.87);
-  background-color: rgba(160, 196, 241, 0.87);
-  color: rgba(255, 0, 204, 0.87);
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -60,36 +60,89 @@ button:focus-visible {
   border: 1px solid rgba(247, 155, 229, 0.87);
   border-radius: 5px;
   margin: 10px;
-  padding: 5px 10px;
+  padding: 5px 10px 15px 10px;
+  background-color: azure;
 }
 
 .queen-assignment-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 10px 5px;
+  gap: 20px 5px;
 }
 
 .queen-assignment-card {
   width: 30%;
+  box-shadow: lightpink 0 0 8px 2px;
+  border-color: rgba(255, 0, 204, 0.87);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  background-color: lightgoldenrodyellow;
+  border-radius: 3px;
+  border: lightcyan 2px solid;
+  padding: 5px;
+  text-align: center;
+  color: hotpink !important;
 }
 
 .queen-assignment-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   gap: 10px;
+}
+
+.queen-assignment-buttons button{
+  border-color: rgba(247, 155, 229, 0.87);
+  background-color: lightcyan;
+  color: rgba(255, 0, 204, 0.87);
+  text-shadow: lightgoldenrodyellow 0 0 2px;
+  box-shadow: rgba(247, 155, 229, 0.87) 0 0 3px;
+}
+
+.queen-assignment-buttons button:hover {
+  border-color: rgba(255, 0, 204, 0.87);
+  background-color: lightgoldenrodyellow;
+  color: rgba(255, 0, 204, 0.87);
+}
+
+div.queen-selection-phase-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+button#assign-queens {
+  margin: 0 auto;
+  background-color: rgba(247, 155, 229, 0.87);
+  border-color: rgba(255, 0, 204, 0.87);
+  text-shadow: rgb(63, 63, 63) 0 0 2px;
+}
+
+button#assign-queens:hover {
+  background-color: magenta;
+  border-color: rgba(255, 0, 204, 0.87);
+  text-shadow: rgb(63, 63, 63) 0 0 2px;
 }
 
 .team-dashboard {
   display: flex;
-  flex-wrap: wrap;}
+  flex-wrap: wrap;
+}
 
 .team-card {
   border: 1px solid rgba(247, 155, 229, 0.87);
   border-radius: 5px;
   margin: 10px;
   padding: 5px 10px;
-  width: 200px
+  width: 200px;
 }
 
 @media (prefers-color-scheme: light) {
