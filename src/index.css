@@ -113,7 +113,7 @@ button:focus-visible {
   color: rgba(255, 0, 204, 0.87);
 }
 
-div.queen-selection-phase-container {
+div.queen-cards-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -149,7 +149,7 @@ const App = () => {
     <>
       <h1 className="display-2">Ru Paul's Drag Race Fantasy</h1>
 
-      <div className="queen-selection-phase-container">
+      <div className="queen-cards-container">
         {isSelectionPhase ? (
           <>
             <QueenAssignmentBoard
